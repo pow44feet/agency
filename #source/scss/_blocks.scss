@@ -1,0 +1,138 @@
+/* HEADER */
+.menu-link {
+	@include font-regular();
+	font-size: 16px;
+	line-height: 28px;
+	color: $dark-blue;
+	@media (max-width:799.98px){
+		font-size: 40px;
+	}
+}
+/* HEADER */
+
+/* TEXT */
+.header-title {
+	@include font-regular();
+	font-size: 44px;
+	line-height: 60px;
+	color: $dark-blue;
+	@media (max-width:479.98px){
+		font-size: 40px;
+	}
+}
+.tall-line {
+	position: relative;
+	bottom: 18px;
+	left: 0px;
+	display: inline-block;
+	width: 31px;
+	height: 5px;
+	border-radius: 2.5px;
+	background: linear-gradient(left, #00c6ff, #0072ff);
+	@media (max-width:479.98px){
+		bottom: 10px;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: -16px;
+		left: -11px;
+		width: 57px;
+		height: 37px;
+		background-image: url("../images/benefits/shadow-little.png");
+	}
+}
+.title-tall-line {
+	position: relative;
+	@include font-xlight();
+	font-size: 39px;
+	line-height: 52px;
+	color: $dark-blue;
+	@media (max-width:479.98px){
+		font-size: 35px;
+	}
+}
+.title-small {
+	@include font-medium();
+	font-size: 18px;
+	line-height: 28px;
+	color: #fff;
+}
+.title-medium {
+	@include font-sbold();
+	font-size: 30px;
+	line-height: 52px;
+	color: $dark-blue;
+}
+.text-xsmall {
+	@include font-light();
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: $secondary-gray;
+}
+.text-small {
+	@include font-light();
+	font-size: 16px;
+	line-height: 35px;
+	color: $main-gray;
+}
+.lh28 {
+	line-height: 28px;
+}
+/* TEXT */
+
+/* BUTTONS */
+.btn-normal {
+	background-image: linear-gradient(-269deg, #00c6ff 0%, #0072ff 100%);
+	span {
+		@include font-light();
+		font-size: 16px;
+		color: #fff;
+	}
+}
+.btn-medium-size {
+	min-width: 180px;
+	line-height: 62px;
+	border-radius: 31px;
+}
+.btn-arrow {
+	span {
+		position: relative;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 6px;
+			right: -8px;
+			background-color: #fff;
+		}
+		&:before {
+			top: 7.5px;
+			transform: rotate(-40deg);
+		}
+		&:after {
+			bottom: 5.5px;
+			transform: rotate(40deg);
+		}
+	}
+}
+.btn-shadow {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: -1;
+		width: 290px;
+		height: 200px;
+		background-image: url("../images/header/icons/shadow.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: translate(-50%, -50%);
+	}
+}
+/* BUTTONS */
