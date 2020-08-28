@@ -29,9 +29,12 @@
 	height: 5px;
 	border-radius: 2.5px;
 	background: linear-gradient(left, #00c6ff, #0072ff);
-	@media (max-width:479.98px){
-		bottom: 10px;
-	}
+   @media (max-width:899.98px){
+      bottom: 10px;
+   }
+   @media (max-width:479.98px){
+      bottom: 7px;
+   }
 	&:before {
 		content: '';
 		position: absolute;
@@ -48,9 +51,14 @@
 	font-size: 39px;
 	line-height: 52px;
 	color: $dark-blue;
-	@media (max-width:479.98px){
-		font-size: 35px;
-	}
+   @media (max-width:899.98px){
+      font-size: 36px;
+      line-height: 46px;
+   }
+   @media (max-width:479.98px){
+      font-size: 32px;
+      line-height: 42px;
+   }
 }
 .title-small {
 	@include font-medium();
