@@ -333,6 +333,7 @@ body {
 	}
 
 	.header {
+      padding: 40px 0 30px;
 		&__top {margin-bottom: 60px;}
 		&__bottom-empty {text-align: center; margin: 50px 0;}
 	}
@@ -557,7 +558,7 @@ body {
 			position: relative;
 			top: 0;
 			width: 100%;
-			padding: 30px 45px 50px;
+			padding: 40px 45px 40px;
 		}
 	}
 	.wrap-video-169 {
@@ -909,61 +910,47 @@ body {
 	.notice-item {min-width: 250px;}
 }
 @media (max-width:900px){
-	.webp .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 21% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 16% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/55% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
-	.no-webp .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 21% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 16% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/55% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
-	.no-js .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 21% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 16% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/55% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
-	.notice-box {
-		padding: 15px 15px;
-		&:before {
-			width: 700px;
-    		height: 461px;
-		}
-	}
-	.notice-item {
-		min-width: 200px;
-		&__inner {padding: 8px 0 10px 0;}
-	}
+	.webp .benefits {background: none;}
+	.no-webp .benefits {background: none;}
+	.no-js .benefits {background: none;}
+   .benefits {
+      &__bottom {padding: 0 30px;}
+   }
+   .notice-box {
+      width: 100%;
+      flex-direction: column;
+      padding: 10px 30px;
+   }
 }
+@media (min-width:768px) and (max-width:899.98px){
+   .notice-item {
+      min-width: 100%;
+      padding: 15px 20px;
+      border-right: none;
+      border-bottom: 1px solid #d9e4e8;
+      &:last-child {border-bottom: none;}
+      &__inner {flex-direction: row; justify-content: space-around;}
+      &__title {flex: 0 1 auto;}
+      &__icon,
+      &__title {margin-bottom: 0;}
+   }
+}
+
+
 @media (max-width:$md3+px){
-	.webp .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 23% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 18% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/65% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
-	.no-webp .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 23% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 18% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/65% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
-	.no-js .benefits {
-		background: url("../images/benefits/bg/curve_01.png") 100.6% 23% no-repeat,
-					url("../images/benefits/bg/curve_01-shadow.png") 101.6% 18% no-repeat,
-					url("../images/benefits/bg/curve_02.svg") -1% 47%/65% no-repeat,
-					url("../images/benefits/bg/curve_03.png") 101% 93%/40% no-repeat;
-	}
 	.benefits {
+      padding-top: 80px;
 		&__bottom {margin-top: 140px; margin-bottom: 120px;}
-	}
-	.notice-box {flex-direction: column; padding: 30px;}
+   }
+   .image-inner {
+      width: 100%;
+      &__box-1 {display: none;}
+      &__box-2 {width: 100%; margin-left: 0; align-items: center;}
+      &__box-2-middle {max-width: 100%; text-align: left;}
+   }
+	.notice-box {max-width: 350px; padding: 30px; flex-direction: column;}
 	.notice-item {
-		min-width: 300px;
+		min-width: auto;
 		border-right: none;
     	border-bottom: 1px solid #d9e4e8;
     	&:last-child {border-bottom: none;}
@@ -971,9 +958,6 @@ body {
 	}
 }
 @media (max-width:600px){
-	.webp .benefits {background: none;}
-	.no-webp .benefits {background: none;}
-	.no-js .benefits {background: none;}
 	.benefits-item {
 		&__text {min-width: 0;}
 		&__header{margin-bottom: 20px;}
@@ -990,8 +974,20 @@ body {
 @media (max-width:$md4+px){
 	.benefits {
 		&__header {margin-bottom: 70px;}
-		&__body {padding: 0;}
-	}
+      &__body {padding: 0;}
+      &__item {
+         &:last-child{margin-bottom: 0;}
+      }
+      &__bottom {padding: 0; margin: 80px 0;}
+   }
+   .notice-box {
+      &:before {display: none;}
+   }
+   .image-inner {
+      &__box-2-top,
+      &__box-2-bottom {display: none;}
+      &__box-2-middle {padding: 0;}
+   }
 }
 /* MEDIA QUARIES */
 /* BENEFITS */
