@@ -157,7 +157,7 @@ body {
 }
 @media (max-width:799.98px){
    .header {
-      padding: 40px 0 30px;
+      padding: 30px 0 30px;
 		&__top {margin-bottom: 60px;}
 		&__bottom-empty {text-align: center; margin: 50px 0;}
 	}
@@ -217,7 +217,6 @@ body {
 			height: auto;
 		}
 	}
-	&__list {}
 	&__burger {display: none;}
 }
 .menu-list {
@@ -228,7 +227,6 @@ body {
 		&:first-child {margin-left: 0;}
 		&:last-child {margin-right: 0;}
 	}
-	&__link {}
 }
 
 /*Header-top media quaries*/
@@ -238,89 +236,123 @@ body {
 	}
 }
 @media (max-width:799.98px){
+   .header {
+      &__top {height: 49px;}
+   }
+}
+
+
+/* .menu.active:before transition properties must be equal .menu-list:before transition properties */
+/* BURGER MENU */
+@media (max-width:799.98px){
    .menu {
-		&__burger {display: block; top: 11px;}
-		&__list {
-			position: absolute;
-			top: 0;
-			left: -100%;
-			z-index: 5;
-			display: block;
-			width: 100%;
-			height: 100%;
-			text-align: right;
-			background-color: #fff;
-			left: -130%;
-			transition: all ease-in-out .5s;
-		}
+      transition: all ease-in-out .25s;
+      &__burger {display: block; top: 11px;}
+      &:before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: -100%;
+         z-index: 3;
+         width: 100%;
+         height: 90px;
+         background-color: #fff;
+      }
+   }
+
+   .menu-list {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      @include flexbox();
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      order: 2;
+      padding: 120px 11px 0 0;
+      text-align: right;
+      background-color: #fff;
+      //window disappearence when closing burger menu
+      transition: all ease-in-out .4s;
+      transition-delay: .3s;
+      &__item {position: relative; margin: 0; margin-bottom: 30px;}
+      &__link {
+         position: relative;
+         &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transform: translateY(-50%);
+            //letters disappearence  when closing burger menu
+            transition: all ease-out .45s;
+            transition-delay: 0s;
+         }
+      }
    }
    
-	//hidden menu list items
-	.menu-list {
-		padding: 150px 0;
-		&__item {
-			position: relative;
-			margin: 0;
-			margin: 40px;
-			transition: all ease-in-out .3s;
-			&:nth-child(1) {left: -100%; opacity: 0; transition-delay: .5s;}
-			&:nth-child(2) {left: -100%; opacity: 0; transition-delay: .65s}
-			&:nth-child(3) {left: -100%; opacity: 0; transition-delay: .8s}
-			&:nth-child(4) {left: -100%; opacity: 0; transition-delay: .95s}
-			&:nth-child(5) {left: -100%; opacity: 0; transition-delay: 1.1s}
-			&:last-child {margin: 40px;}
-		}
-   }
-   
-	//burger menu's when active
-	.menu.active {
-		.menu__list {position: fixed; left: 0;}
-		.menu-list__item {left: 0; opacity: 1;}
-		.menu__burger {z-index: 5;}
-		.burger {
+   .menu.active {
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      @include flexbox();
+      flex-direction: column;
+      align-items: flex-end;
+      &:before {
+         left: 0;
+         //transition when opening burger menu
+         transition: all ease-in .6s;
+         transition-delay: .4s;
+      }
+      .menu__logo { 
+         position: absolute;
+         left: 45px;
+         top: 30px;
+         z-index: 1;
+      }
+      .menu-list {
+         left: 0; z-index: 2;
+         padding: 120px 44px 0 0;
+         &__link {
+            height: 100%;
+            &:before {
+               height: 0;
+               //transition when opening burger menu
+               transition: all ease-in .6s;
+               transition-delay: .4s;
+            }
+         }
+      }
+      .menu__burger {position: absolute; top: 57px; right: 46px; z-index: 3;}
+      .burger {
+         width: 50px;
+         height: 20px;
+         order: 1;
 			&__name {color: #000;}
 			&__line-top,
 			&__line-bottom {background-color: #000;}
 		}
    }
-   
-	//burger menu's when active
-	.burger {
-		position: relative;
-		display: inline-block;
-		&__name {
-			@include font-medium();
-			font-size: 18px;
-			text-transform: uppercase;
-			color: #fff;
-		}
-		&__line-top,
-		&__line-bottom {
-			content: '';
-			position: absolute;
-			left: 50%;
-			width: 40px;
-			height: 4px;
-			background-color: #fff;
-			border-radius: 10px;
-			transform: translateX(-50%);
-			transition: all ease-in-out .35s;
-		}
-		&__line-top {top: -20px;}
-		&__line-bottom {top: -10px;}
-	}
-	.burger.active {
-		.burger {
-			&__line-top,
-			&__line-bottom {
-				top: -15px;
-				left: 16px;
-				width: 25px;
-			}
-			&__line-top {transform: rotate(45deg);}
-			&__line-bottom {transform: rotate(-45deg);}
-		}
-	}
+   @media (max-width:479.98px){
+      .menu.active {
+         .menu__logo { 
+            position: absolute;
+            left: 10px;
+            top: 30px;
+            z-index: 1;
+         }
+         .menu__burger {position: absolute; top: 57px; right: 12px; z-index: 3;}
+         .menu-list {padding: 120px 11px 0 0;}
+      }
+      .menu-list {padding: 120px 11px 0 0;}
+   }
 }
 /* HEADER-TOP */
 

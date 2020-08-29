@@ -8,6 +8,47 @@
 		font-size: 40px;
 	}
 }
+
+/*burger menu icon*/
+@media (max-width:799.98px){
+   .burger {
+      position: relative;
+      display: inline-block;
+      &__name {
+         @include font-medium();
+         font-size: 18px;
+         text-transform: uppercase;
+         color: #fff;
+      }
+      &__line-top,
+      &__line-bottom {
+         content: '';
+         position: absolute;
+         left: 50%;
+         width: 40px;
+         height: 4px;
+         background-color: #fff;
+         border-radius: 10px;
+         transform: translateX(-50%);
+         transition: all ease-in-out .35s;
+      }
+      &__line-top {top: -20px;}
+      &__line-bottom {top: -10px;}
+   }
+   .burger.active {
+      .burger {
+         &__line-top,
+         &__line-bottom {
+            top: -15px;
+            left: 16px;
+            width: 25px;
+         }
+         &__line-top {transform: rotate(45deg);}
+         &__line-bottom {transform: rotate(-45deg);}
+      }
+   }
+}
+
 /* HEADER */
 
 
