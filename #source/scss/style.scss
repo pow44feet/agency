@@ -728,8 +728,142 @@ body {
 
 
 
+/* RATE */
+.rate {
+   &__top {margin-bottom: 150px; text-align: center;}
+   &__top-title {margin-bottom: 30px;}
+   &__body {max-width: 1228px; margin: 0 auto;}
+}
+.rate-box {
+   @include flexbox();
+   margin: 0 -7px;
+   &__item {
+      flex: 0 1 400px;
+      padding: 0 7px;
+   }
+}
+.rate-box__item {
+   &:nth-child(1) {margin-top: 40px;}
+   &:nth-child(2) {margin-top: 0;}
+   &:nth-child(3) {margin-top: 20px;}
+}
 
+/*rate-item text block properties*/
+.rate-item {
+   &__header-name {
+      @include font-sbold();
+      font-size: 35px;
+      color: $gray-header;
+   }
+   &__header-price {
+      @include font-medium();
+      font-size: 22px;
+      line-height: 30px;
+      color: #000;
+   }
+   &__text-block {
+      @include font-regular();
+      font-size: 14px;
+      line-height: 30px;
+      color: $gray-text;
+   }
+   &__list-item {
+      position: relative;
+      padding-left: 30px;
+      @include font-regular();
+      font-size: 14px;
+      line-height: 34px;
+      color: $gray-text;
+      &:before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 0;
+         width: 14px;
+         height: 11px;
+         background: url("../images/rate/icons/01.png");
+         transform: translateY(-50%);
+      }
+   }
+}
 
+/*rate-item blocks sizes*/
+.rate-item-size {
+   &__min {min-height: 510px;}
+   &__mid {min-height: 510px;}
+   &__max {min-height: 570px;}
+}
+.rate-item {
+   overflow: hidden;
+   @include flexbox();
+   flex-direction: column;
+   background-color: #fff;
+   border-radius: 10px;
+   box-shadow: 0px 55px 139px 0px rgba(0, 0, 0, 0.11);
+   &__header{padding: 40px 25px 40px;}
+   &__header-box {
+      @include flexbox();
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__line {padding: 0 25px;}
+   &__body {height: 100%; flex: 1 1 auto; padding: 45px 25px 0;}
+   &__text {margin-bottom: 45px;}
+   &__list {margin-bottom: 40px;}
+}
+
+/*rate-item hover*/
+.rate-item:hover {
+   z-index: 2;
+   transform: scale(1.1);
+   .rate-item {
+      /*blocks hover properties*/
+      &__line {display: none;}
+      &__body {z-index: 0;
+         background: linear-gradient(-110deg, #00c6ff, #0072ff);
+      }
+      /*text hover properties*/
+      &__header-name {color: $light-blue;}
+      &__header-price {color: $light-green;}
+      &__text-block,
+      &__list-item {color: #fff;}
+      &__list-item:before{
+         background: url("../images/rate/icons/02.png");
+      }
+   }
+   /*buttons hover properties*/
+   .btn-normal {
+      background: #fff;
+      span {
+         position: relative;
+         color: $gentle-blue;
+         &:before,
+         &:after {
+            content: '';
+            position: absolute;
+            top: -11%;
+            z-index: -1;
+         }
+         &:before {
+            left: 23%;
+            width: 45px;
+            height: 45px;
+            background-color: #00fffc;
+            filter: blur(19px);
+         }
+         &:after {
+            right: 12%;
+            width: 35px;
+            height: 35px;
+            background-color: #00de88;
+            filter: blur(18px);
+         }
+      }
+      
+   }
+}
+
+/* RATE */
 
 
 

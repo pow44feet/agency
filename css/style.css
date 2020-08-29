@@ -691,9 +691,15 @@ textarea:focus:-ms-input-placeholder {
   color: #fff;
 }
 
+.btn-small-size {
+  min-width: 137px;
+  padding: 11.5px 26px;
+  border-radius: 24px;
+}
+
 .btn-medium-size {
   min-width: 180px;
-  line-height: 62px;
+  padding: 22px 30px;
   border-radius: 31px;
 }
 
@@ -745,7 +751,22 @@ textarea:focus:-ms-input-placeholder {
   transform: translate(-50%, -50%);
 }
 
+.btn-shadow-gray {
+  -webkit-box-shadow: 0px 9px 43px 0px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 9px 43px 0px rgba(0, 0, 0, 0.22);
+}
+
 /* BUTTONS */
+/* LINES */
+.item-line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #dddddd;
+}
+
+/* LINES */
 body {
   max-width: 1920px;
   margin: 0 auto;
@@ -1677,3 +1698,240 @@ body.lock {
 }
 
 /* BENEFITS */
+/* RATE */
+.rate__top {
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+.rate__top-title {
+  margin-bottom: 30px;
+}
+
+.rate__body {
+  max-width: 1228px;
+  margin: 0 auto;
+}
+
+.rate-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  /*font-size: 0;*/
+  margin: 0 -7px;
+}
+
+.rate-box__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 400px;
+  flex: 0 1 400px;
+  padding: 0 7px;
+}
+
+.rate-box__item:nth-child(1) {
+  margin-top: 40px;
+}
+
+.rate-box__item:nth-child(2) {
+  margin-top: 0;
+}
+
+.rate-box__item:nth-child(3) {
+  margin-top: 20px;
+}
+
+/*rate-item text block properties*/
+.rate-item__header-name {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 35px;
+  color: #adacac;
+}
+
+.rate-item__header-price {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000;
+}
+
+.rate-item__text-block {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #5d5d5d;
+}
+
+.rate-item__list-item {
+  position: relative;
+  padding-left: 30px;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 34px;
+  color: #5d5d5d;
+}
+
+.rate-item__list-item:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 11px;
+  background: url("../images/rate/icons/01.png");
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*rate-item blocks sizes*/
+.rate-item-size__min {
+  min-height: 510px;
+}
+
+.rate-item-size__mid {
+  min-height: 510px;
+}
+
+.rate-item-size__max {
+  min-height: 570px;
+}
+
+.rate-item {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  /*font-size: 0;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 55px 139px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 55px 139px 0px rgba(0, 0, 0, 0.11);
+}
+
+.rate-item__header {
+  padding: 40px 25px 40px;
+}
+
+.rate-item__header-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  /*font-size: 0;*/
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rate-item__line {
+  padding: 0 25px;
+}
+
+.rate-item__body {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 45px 25px 0;
+}
+
+.rate-item__text {
+  margin-bottom: 45px;
+}
+
+.rate-item__list {
+  margin-bottom: 40px;
+}
+
+/*rate-item hover*/
+.rate-item:hover {
+  z-index: 2;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  /*buttons hover properties*/
+}
+
+.rate-item:hover .rate-item {
+  /*blocks hover properties*/
+  /*text hover properties*/
+}
+
+.rate-item:hover .rate-item__line {
+  display: none;
+}
+
+.rate-item:hover .rate-item__body {
+  z-index: 0;
+  background: -webkit-linear-gradient(200deg, #00c6ff, #0072ff);
+  background: -o-linear-gradient(200deg, #00c6ff, #0072ff);
+  background: linear-gradient(-110deg, #00c6ff, #0072ff);
+}
+
+.rate-item:hover .rate-item__header-name {
+  color: #00abff;
+}
+
+.rate-item:hover .rate-item__header-price {
+  color: #33cc66;
+}
+
+.rate-item:hover .rate-item__text-block, .rate-item:hover .rate-item__list-item {
+  color: #fff;
+}
+
+.rate-item:hover .rate-item__list-item:before {
+  background: url("../images/rate/icons/02.png");
+}
+
+.rate-item:hover .btn-normal {
+  background: #fff;
+}
+
+.rate-item:hover .btn-normal span {
+  position: relative;
+  color: #0091ff;
+}
+
+.rate-item:hover .btn-normal span:before, .rate-item:hover .btn-normal span:after {
+  content: '';
+  position: absolute;
+  top: -11%;
+  z-index: -1;
+}
+
+.rate-item:hover .btn-normal span:before {
+  left: 23%;
+  width: 45px;
+  height: 45px;
+  background-color: #00fffc;
+  -webkit-filter: blur(19px);
+  filter: blur(19px);
+}
+
+.rate-item:hover .btn-normal span:after {
+  right: 12%;
+  width: 35px;
+  height: 35px;
+  background-color: #00de88;
+  -webkit-filter: blur(18px);
+  filter: blur(18px);
+}
+
+/* RATE */
