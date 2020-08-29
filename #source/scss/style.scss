@@ -838,29 +838,18 @@ body {
       span {
          position: relative;
          color: $gentle-blue;
-         &:before,
-         &:after {
+         &:before {
             content: '';
             position: absolute;
-            top: -11%;
+            top: 70%;
             z-index: -1;
-         }
-         &:before {
-            left: 23%;
-            width: 45px;
+            width: 100px;
             height: 45px;
-            background-color: #00fffc;
-            filter: blur(19px);
-         }
-         &:after {
-            right: 12%;
-            width: 35px;
-            height: 35px;
-            background-color: #00de88;
-            filter: blur(18px);
+            background: linear-gradient(to right, #00fffc, #00de88);
+            filter: blur(15px);
+            transform: translateY(-50%);
          }
       }
-      
    }
 }
 

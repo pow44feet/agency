@@ -1912,29 +1912,22 @@ body.lock {
   color: #0091ff;
 }
 
-.rate-item:hover .btn-normal span:before, .rate-item:hover .btn-normal span:after {
+.rate-item:hover .btn-normal span:before {
   content: '';
   position: absolute;
-  top: -11%;
+  top: 70%;
   z-index: -1;
-}
-
-.rate-item:hover .btn-normal span:before {
-  left: 23%;
-  width: 45px;
+  width: 100px;
   height: 45px;
-  background-color: #00fffc;
-  -webkit-filter: blur(19px);
-  filter: blur(19px);
-}
-
-.rate-item:hover .btn-normal span:after {
-  right: 12%;
-  width: 35px;
-  height: 35px;
-  background-color: #00de88;
-  -webkit-filter: blur(18px);
-  filter: blur(18px);
+  background: -webkit-gradient(linear, left top, right top, from(#00fffc), to(#00de88));
+  background: -webkit-linear-gradient(left, #00fffc, #00de88);
+  background: -o-linear-gradient(left, #00fffc, #00de88);
+  background: linear-gradient(to right, #00fffc, #00de88);
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* RATE */
