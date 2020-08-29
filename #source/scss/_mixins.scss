@@ -11,4 +11,5 @@
 @mixin font-sbold() {font-family: Poppins; font-weight: 600;}
 
 //animation
+@mixin anim_ease-in-03() {transition: all ease-in .3s;}
 @mixin anim035() {transition: all ease-in-out .35s;}
