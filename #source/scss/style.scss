@@ -892,7 +892,7 @@ body {
    &__body {height: 100%; flex: 1 1 auto; padding: 45px 25px 0;}
    &__text {margin-bottom: 45px;}
    &__list {margin-bottom: 40px;}
-   &__button {margin-bottom: 40px;}
+   &__button {margin-bottom: 45px;}
 }
 
 /*rate-item blocks media quaries*/
@@ -950,6 +950,12 @@ body {
       &__min,
       &__mid,
       &__max {min-height: auto;}
+   }
+}
+@media (max-width:379.98px){
+   .rate-item {
+      &__header {padding: 35px 10px 35px;}
+      &__body {padding: 40px 10px 0;}
    }
 }
 
