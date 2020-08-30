@@ -644,7 +644,7 @@ body {
 }
 @media (max-width:1200px){
    .benefits {
-		&__item {margin-bottom: 140px;}
+      &__item {margin-bottom: 140px;}
 	}
    .webp .benefits {
 		background: url("../images/benefits/bg/curve_01.png") 100.6% 13%/24% no-repeat,
@@ -729,10 +729,16 @@ body {
 
 
 /* RATE */
+
+/*Rate main blocks*/
 .rate {
+   overflow: hidden;
+   padding-bottom: 50px;
    &__top {margin-bottom: 150px; text-align: center;}
    &__top-title {margin-bottom: 30px;}
-   &__body {max-width: 1228px; margin: 0 auto;}
+   &__body {max-width: 1228px; margin: 0 auto; margin-bottom: 120px;}
+   &__bottom {text-align: center;}
+   &__bottom-title {margin-bottom: 50px;}
 }
 .rate-box {
    @include flexbox();
@@ -747,6 +753,73 @@ body {
    &:nth-child(2) {margin-top: 0;}
    &:nth-child(3) {margin-top: 20px;}
 }
+
+/*Rate main blocks media quaries*/
+@media (max-width:1199.98px){
+   .rate {
+      &__top {margin-bottom: 90px;}
+      &__top-title {margin-bottom: 10px;}
+      &__body {max-width: 900px; margin-bottom: 60px;}
+   }
+   .rate-box {
+      flex-wrap: wrap;
+      margin: 0 -15px;
+      &__item {
+         max-width: 50%;
+         flex: 1 1 50%;
+         padding: 0 15px;
+      }
+   }
+   .rate-box__item {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {margin-top: 0; margin-bottom: 30px;}
+      //order settings
+      &:nth-child(2) {order: 3;}
+      &:nth-child(3) {order: 2;}
+   }
+   //rate-item height settings are below
+}
+@media (max-width:799.98px){
+   .rate {
+      &__top {margin-bottom: 60px;}
+      &__body {margin-bottom: 30px;}
+      &__bottom-title {margin-bottom: 30px;}
+   }
+   .rate-box {
+      justify-content: center;
+      &__item {
+         max-width: 500px;
+         flex: 1 1 500px;
+      }
+   }
+}
+@media (max-width:479.98px){
+   .rate {
+      &__top {margin-bottom: 40px;}
+      &__body {margin-bottom: 20px;}
+   }
+}
+
+
+/*rate main blocks text*/
+.rate {
+   &__top-title .title-medium,
+   &__top-text .text-small {
+      white-space: pre-line;
+   }
+}
+
+/*rate main blocks text media quaries*/
+@media (max-width:479.98px){
+   .rate {
+      &__top-title .title-medium,
+      &__top-text .text-small {
+         white-space: normal;
+      }
+   }
+}
+
 
 /*rate-item text block properties*/
 .rate-item {
@@ -787,6 +860,14 @@ body {
    }
 }
 
+/*rate-item text block media quaries*/
+@media (max-width:479.98px){
+   .rate-item {
+      &__header-name {font-size: 32px;}
+      &__header-price {font-size: 20px;}
+   }
+}
+
 /*rate-item blocks sizes*/
 .rate-item-size {
    &__min {min-height: 510px;}
@@ -811,47 +892,110 @@ body {
    &__body {height: 100%; flex: 1 1 auto; padding: 45px 25px 0;}
    &__text {margin-bottom: 45px;}
    &__list {margin-bottom: 40px;}
+   &__button {margin-bottom: 40px;}
 }
 
-/*rate-item hover*/
-.rate-item:hover {
-   z-index: 2;
-   transform: scale(1.1);
-   .rate-item {
-      /*blocks hover properties*/
-      &__line {display: none;}
-      &__body {z-index: 0;
-         background: linear-gradient(-110deg, #00c6ff, #0072ff);
-      }
-      /*text hover properties*/
-      &__header-name {color: $light-blue;}
-      &__header-price {color: $light-green;}
-      &__text-block,
-      &__list-item {color: #fff;}
-      &__list-item:before{
-         background: url("../images/rate/icons/02.png");
-      }
+/*rate-item blocks media quaries*/
+@media (max-width:1199.98px){
+   .rate-item-size {
+      &__min,
+      &__mid,
+      &__max {height: 100%;}
    }
-   /*buttons hover properties*/
-   .btn-normal {
-      background: #fff;
-      span {
-         position: relative;
-         color: $gentle-blue;
-         &:before {
-            content: '';
-            position: absolute;
-            top: 70%;
-            z-index: -1;
-            width: 100px;
-            height: 45px;
-            background: linear-gradient(to right, #00fffc, #00de88);
-            filter: blur(15px);
-            transform: translateY(-50%);
+   .rate-item {
+      z-index: 2;
+      .rate-item {
+         /*blocks properties*/
+         &__line {display: none;}
+         &__body {
+            z-index: 0;
+            background: linear-gradient(-110deg, #00c6ff, #0072ff);
+         }
+         /*text properties*/
+         &__header-name {color: $light-blue;}
+         &__header-price {color: $light-green;}
+         &__text-block,
+         &__list-item {color: #fff;}
+         &__list-item:before{
+            background: url("../images/rate/icons/02.png");
+         }
+      }
+      /*buttons properties*/
+      .btn-normal {
+         background: #fff;
+         span {
+            position: relative;
+            color: $gentle-blue;
+            &:before {
+               content: '';
+               position: absolute;
+               top: 70%;
+               z-index: -1;
+               width: 100px;
+               height: 45px;
+               background: linear-gradient(to right, #00fffc, #00de88);
+               filter: blur(15px);
+               transform: translateY(-50%);
+            }
          }
       }
    }
 }
+@media (max-width:479.98px){
+   .rate-item {
+      &__header {padding: 35px 20px 35px;}
+      &__body {padding: 40px 20px 0;}
+   }
+   .rate-item-size {
+      &__min,
+      &__mid,
+      &__max {min-height: auto;}
+   }
+}
+
+/*rate-item hover*/
+@media (min-width:1199.98px){
+   .rate-item:hover {
+      z-index: 2;
+      transform: scale(1.08);
+      .rate-item {
+         /*blocks hover properties*/
+         &__line {display: none;}
+         &__body {
+            z-index: 0;
+            background: linear-gradient(-110deg, #00c6ff, #0072ff);
+         }
+         /*text hover properties*/
+         &__header-name {color: $light-blue;}
+         &__header-price {color: $light-green;}
+         &__text-block,
+         &__list-item {color: #fff;}
+         &__list-item:before{
+            background: url("../images/rate/icons/02.png");
+         }
+      }
+      /*buttons hover properties*/
+      .btn-normal {
+         background: #fff;
+         span {
+            position: relative;
+            color: $gentle-blue;
+            &:before {
+               content: '';
+               position: absolute;
+               top: 70%;
+               z-index: -1;
+               width: 100px;
+               height: 45px;
+               background: linear-gradient(to right, #00fffc, #00de88);
+               filter: blur(15px);
+               transform: translateY(-50%);
+            }
+         }
+      }
+   }
+}
+
 
 /* RATE */
 

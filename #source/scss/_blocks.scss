@@ -407,7 +407,10 @@
 	@include font-sbold();
 	font-size: 30px;
 	line-height: 52px;
-	color: $dark-blue;
+   color: $dark-blue;
+   @media (max-width:479.98px){
+      line-height: 42px;
+   }
 }
 .text-xsmall {
 	@include font-light();
@@ -443,19 +446,20 @@
 }
 .btn-medium-size {
 	min-width: 180px;
-	padding: 22px 30px;
+	padding: 18.5px 30px;
 	border-radius: 31px;
 }
 .btn-arrow {
 	span {
-		position: relative;
+      position: relative;
+      padding-right: 12px;
 		&:before,
 		&:after {
 			content: '';
 			position: absolute;
 			width: 1px;
 			height: 6px;
-			right: -8px;
+			right: 0px;
 			background-color: #fff;
 		}
 		&:before {
