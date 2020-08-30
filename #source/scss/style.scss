@@ -1045,22 +1045,42 @@ body {
 }
 @media (max-width:1199.98px){
    .footer {
-      padding-top: 120px;
+      padding-top: 0;
+      margin-top: 120px;
       background: url("../images/footer/curve_02-inner.svg") 103% 101% no-repeat,
                   url("../images/footer/curve_02.svg") 102% 101% no-repeat,
                   url("../images/footer/curve_01-inner.svg") -0.7% 77% no-repeat,
-                  url("../images/footer/curve_01.svg") 0% 101% no-repeat;
+                  url("../images/footer/curve_01.svg") 0% 101% no-repeat,
+                  rgba(#f0faff, 1);
       &__inner {
          padding-top: 30px;
-         background-color: rgba(#00c6ff, .19);
-         -webkit-box-shadow: 0px -20px 60px 40px rgba(0,198,255,0.19);
-         -moz-box-shadow: 0px -20px 60px 40px rgba(0,198,255,0.19);
-         box-shadow: 0px -20px 60px 40px rgba(0,198,255,0.19);
+         //background-color: rgba(#f0faff, 1);
+         -webkit-box-shadow: 0px -20px 75px -8px rgba(0, 198, 255, 0.19);
+         -moz-box-shadow: 0px -20px 75px -8px rgba(0, 198, 255, 0.19);
+         box-shadow: 0px -20px 75px -8px rgba(0, 198, 255, 0.19);
       }
    }
 }
 @media (max-width:799.98px){
-   .footer {background: none;}
+   .footer {
+      background: url("../images/footer/curve_02-inner.svg") 103% 101% no-repeat,
+                  url("../images/footer/curve_02.svg") 102% 101% no-repeat,
+                  url("../images/footer/curve_01-inner.svg") -0.7% 77% no-repeat,
+                  url("../images/footer/curve_01.svg") 0% 101% no-repeat,
+                  rgba(#f0faff, 1);
+   }
+}
+@media (max-width:767.98px){
+   .footer {
+      background: url("../images/footer/curve_02-inner.svg") 101% 101% no-repeat,
+                  url("../images/footer/curve_02.svg") 102% 101% no-repeat,
+                  //url("../images/footer/curve_01-inner.svg") -0.5% 25% no-repeat,
+                  //url("../images/footer/curve_01.svg") -6% 10% no-repeat,
+                  rgba(#f0faff, 1);
+   }
+}
+@media (max-width:599.98px){
+   .footer {background: rgba(#f0faff, 1);}
 }
 
 
