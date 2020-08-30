@@ -80,6 +80,20 @@ function dynamic_adaptive_back_all(){
 }
 
 
+//Footer-item transformation to tabs
+$(document).ready(function () {
+
+   $('.footer-item__title').click(function () {
+      winWidth = $(window).width();
+
+      if (winWidth >= 600) return;
+      else {
+         $(this).toggleClass('active').next().slideToggle(300);
+      }
+   });
+   
+});
+
 /*$(document).ready(function(){
   $('.introduction__slider').slick({
     arrows: false,
